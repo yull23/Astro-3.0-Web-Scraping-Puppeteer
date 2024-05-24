@@ -1,9 +1,26 @@
-```
-npx astro add tailwind
-npm install openai@^4.0.0
-```
+# yull-front-xd
 
-1. Integración de Variable de Entorno
+Este proyecto es una aplicación de frontend que consume una API para obtener y mostrar información sobre los lanzamientos de cohetes. Actualmente, el proyecto está en una fase de prueba y se planean futuras implementaciones para completar su funcionalidad.
 
-Utilizar: 
-https://app2.quicktype.io/
+## Descripción del Proyecto
+
+### Fase 1: Consumo de API
+
+- **Consumo de API**: La aplicación consume una API pública para obtener datos sobre todos los lanzamientos.
+- **Organización de Datos**: Los lanzamientos se ordenan y separan según su estado (exitosos y fallidos).
+- **Interfaz de Usuario**: Una interfaz de usuario que muestra los datos organizados de los lanzamientos.
+
+### Fase 2: Uso de Puppeteer
+
+- **Scraping de Datos Adicionales**: Debido a que la API puede estar incompleta, se utiliza Puppeteer para obtener datos adicionales desde Wikipedia.
+- **Automatización con Puppeteer**: Scripts que permiten acceder a Wikipedia y extraer información relevante para los lanzamientos.
+
+### Fase 3: Integración con API de ChatGPT (Futura Implementación)
+
+- **Planificación Futura**: La siguiente fase incluye la implementación de una función para conectarse a la API de ChatGPT.
+- **Enriquecimiento de Datos**: Utilizar la API de ChatGPT para enriquecer los datos obtenidos de otras fuentes.
+
+## Objetivo a Futuro
+
+El objetivo del proyecto es generalizar la aplicación para consumir y mostrar datos de múltiples APIs, proporcionando una estructura flexible y escalable. También se busca implementar componentes generales y específicos que permitan reutilizar código y facilitar la expansión de la aplicación.
+

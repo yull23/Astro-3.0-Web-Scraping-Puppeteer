@@ -1,16 +1,20 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
+import { getCompletion } from "../services/api-1";
+import { getLaunchesSpaceX } from "../services/api-spaceX";
+const data = await getCompletion();
+console.log(data);
+const data2 = await getLaunchesSpaceX();
+console.log(data2);
 ---
 
 <Layout title="Welcome to Astro.">
   <div>
-    <h1>Hi</h1>
+    <h1>SpaceX Launches</h1>
     <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium totam
-      eius in eveniet est, id quos dolores sunt hic. Consequatur inventore
-      provident expedita cupiditate autem quidem delectus maxime obcaecati
-      temporibus.
+      Detailed and updated information about SpaceX launches, including news,
+      dates, technical details and most relevant aspects of each mission.
     </p>
+    <div></div>
   </div>
 </Layout>

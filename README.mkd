@@ -10,7 +10,7 @@ Este proyecto es una aplicación de frontend que consume una API para obtener y 
 - **Organización de Datos**: Los lanzamientos se ordenan y separan según su estado (exitosos y fallidos).
 - **Interfaz de Usuario**: Una interfaz de usuario que muestra los datos organizados de los lanzamientos.
 
-### Fase 2: Uso de Puppeteer
+### Fase 2: [Uso de Puppeteer](https://github.com/yull23/practicing_webs/tree/main/response_API/scraping-puppeter)
 
 - **Scraping de Datos Adicionales**: Debido a que la API puede estar incompleta, se utiliza Puppeteer para obtener datos adicionales desde Wikipedia.
 - **Automatización con Puppeteer**: Scripts que permiten acceder a Wikipedia y extraer información relevante para los lanzamientos.
@@ -23,4 +23,3 @@ Este proyecto es una aplicación de frontend que consume una API para obtener y 
 ## Objetivo a Futuro
 
 El objetivo del proyecto es generalizar la aplicación para consumir y mostrar datos de múltiples APIs, proporcionando una estructura flexible y escalable. También se busca implementar componentes generales y específicos que permitan reutilizar código y facilitar la expansión de la aplicación.
-

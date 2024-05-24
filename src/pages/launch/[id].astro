@@ -1,7 +1,11 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+import type { Launch } from "@/utils/types/spaceX.types";
 import launches from "@launches";
 const { id } = Astro.params;
+const launchData = launches.filter(
+  (launch) => launch.flight_number === Number(id)
+)[0] as Launch;
 
 export const getStaticPaths = () => {
   return launches.map((launch) => ({
@@ -12,11 +16,34 @@ export const getStaticPaths = () => {
 };
 ---
 
-<Layout title="Launch: " +id>
-  <p>
-    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium quo
-    quis fugit explicabo blanditiis dolor atque? Est tempore, ducimus
-    perspiciatis a autem accusantium sunt atque, temporibus quod quisquam
-    deleniti sit.
-  </p>
+<Layout title={`Launch: ${launchData.name}`}>
+  <div class="bg-gray-800 text-white p-6 rounded-lg">
+    <div class="flex items-center">
+      <img
+        src={launchData.links.patch.large}
+        alt={`${launchData.name} patch`}
+        class="w-24 h-24 mr-4"
+      />
+      <div>
+        <h2 class="text-2xl font-bold">{launchData.name}</h2>
+        <p
+          class={`inline-block px-3 py-1 rounded-full font-semibold ${launchData.success ? "bg-green-500" : "bg-red-500"}`}
+        >
+          {launchData.success ? "Success" : "Failure"}
+        </p>
+      </div>
+    </div>
+    <div class="mt-4">
+      <h3 class="text-xl font-semibold">Flight #{launchData.flight_number}</h3>
+      <p class="mt-2">{launchData.details}</p>
+      <a
+        href={launchData.links.wikipedia}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-blue-400 hover:underline mt-4 block"
+      >
+        More Info
+      </a>
+    </div>
+  </div>
 </Layout>

@@ -1,0 +1,26 @@
+---
+interface Link {
+  href: string;
+  content: string;
+  linkSvg?: string;
+}
+
+interface Props {
+  link: Link;
+}
+
+const { link } = Astro.props;
+---
+
+<a
+  href={link.href || "#"}
+  class="link flex items-center px-2 py-2 border-none min-w-[12rem] cursor-pointer max-w-32 gap-3 justify-center"
+>
+  <img slot="before" src=`${link.linkSvg}` alt="" class="w-8" />
+  <span class="font-semibold text-xl">{link.content}</span>
+</a>
+
+<style>
+  .link {
+  }
+</style>

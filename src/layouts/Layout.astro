@@ -7,7 +7,7 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="bg-slate-800">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
@@ -15,11 +15,12 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body>
+  <body class="max-w-6xl m-auto">
     <slot />
   </body>
 </html>
 <style is:global>
   html {
+    color: azure;
   }
 </style>

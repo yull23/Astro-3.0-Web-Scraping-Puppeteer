@@ -1,5 +1,9 @@
 ---
-// const data = linkList;
+import { linkList } from "@/utils/data/links";
+import NavButton from "../specific/NavButton.astro";
+const links = linkList;
 ---
 
-<div></div>
+<div class="flex gap-6 justify-end">
+  {links.map((link) => <NavButton link={link} />)}
+</div>

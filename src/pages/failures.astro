@@ -5,9 +5,10 @@ import Layout from "@/layouts/Layout.astro";
 import { getLaunchesSpaceX } from "@/services/api-spaceX";
 
 const launches = await getLaunchesSpaceX();
+const failures = launches.filter((launch) => !launch.success);
 ---
 
 <Layout title="Welcome to Astro.">
   <Header />
-  <LaunchGrid launches={launches} />
+  <LaunchGrid launches={failures} />
 </Layout>

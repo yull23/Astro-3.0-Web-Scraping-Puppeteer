@@ -2,8 +2,11 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "@/*": ["src/*"]
-    }
+      "@/*": ["src/*"],
+      "@launches": ["./launchs.json"]
+    },
+    "resolveJsonModule": true,
+    "esModuleInterop": true
   },
   "extends": "astro/tsconfigs/strict"
 }

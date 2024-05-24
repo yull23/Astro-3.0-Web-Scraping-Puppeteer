@@ -1,0 +1,22 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import launches from "@launches";
+const { id } = Astro.params;
+
+export const getStaticPaths = () => {
+  return launches.map((launch) => ({
+    params: {
+      id: launch.flight_number,
+    },
+  }));
+};
+---
+
+<Layout title="Launch: " +id>
+  <p>
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium quo
+    quis fugit explicabo blanditiis dolor atque? Est tempore, ducimus
+    perspiciatis a autem accusantium sunt atque, temporibus quod quisquam
+    deleniti sit.
+  </p>
+</Layout>

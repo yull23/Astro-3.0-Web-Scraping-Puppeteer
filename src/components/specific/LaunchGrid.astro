@@ -1,0 +1,15 @@
+---
+import type { Launch } from "@/utils/types/spaceX.types";
+import LaunchCard from "./LaunchCard.astro";
+
+interface Props {
+  launches: Launch[];
+}
+const { launches } = Astro.props;
+---
+
+<div
+  class="sm:grid sm:grid-cols-[repeat(auto-fill,minmax(15rem,1fr))] flex flex-col items-center gap-8 mx-auto max-w-6xl p-6 border"
+>
+  {launches.map((e) => <LaunchCard launch={e} />)}
+</div>

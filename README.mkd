@@ -4,3 +4,6 @@ npm install openai@^4.0.0
 ```
 
 1. Integración de Variable de Entorno
+
+Utilizar: 
+https://app2.quicktype.io/

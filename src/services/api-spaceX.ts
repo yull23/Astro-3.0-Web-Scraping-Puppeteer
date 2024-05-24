@@ -1,4 +1,4 @@
-import type { Launch } from "../types/spaceX.types";
+import type { Launch } from "../utils/types/spaceX.types";
 
 export async function getLaunchesSpaceX() {
   const response = await fetch(import.meta.env.PUBLIC_API_URL_SPACEX);

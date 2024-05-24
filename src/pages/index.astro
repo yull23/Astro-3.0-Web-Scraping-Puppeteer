@@ -1,20 +1,15 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import { getCompletion } from "../services/api-1";
-import { getLaunchesSpaceX } from "../services/api-spaceX";
-const data = await getCompletion();
-console.log(data);
-const data2 = await getLaunchesSpaceX();
-console.log(data2);
+import Header from "@/components/general/Header.astro";
+import LaunchGrid from "@/components/specific/LaunchGrid.astro";
+import Layout from "@/layouts/Layout.astro";
+import { getLaunchesSpaceX } from "@/services/api-spaceX";
+
+const launches = await getLaunchesSpaceX();
+const failures = launches.filter((launch) => launch.failures);
+const successful = launches.filter((launch) => !launch.failures);
 ---
 
 <Layout title="Welcome to Astro.">
-  <div>
-    <h1>SpaceX Launches</h1>
-    <p>
-      Detailed and updated information about SpaceX launches, including news,
-      dates, technical details and most relevant aspects of each mission.
-    </p>
-    <div></div>
-  </div>
+  <Header />
+  <LaunchGrid launches={failures} />
 </Layout>

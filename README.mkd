@@ -1,4 +1,4 @@
-# yull-front-xd
+# Proyect
 
 Este proyecto es una aplicación de frontend que consume una API para obtener y mostrar información sobre los lanzamientos de cohetes. Actualmente, el proyecto está en una fase de prueba y se planean futuras implementaciones para completar su funcionalidad.
 
